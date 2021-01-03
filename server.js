@@ -24,15 +24,15 @@ app.use(express.json());
 //   res.send("This is a test to check the server!!!!!!");
 // });
 
-// app.get('/notes', function(req, res) {
-//   res.json(dbJSON);
-// });
-
 app.get('/notes', function(req, res) {
   res.sendFile(path.join(__dirname + '/notes.html'));
 });
 
-app.use(function(req, res) {
+app.get('/notes', function(req, res) {
+  res.json(dbJSON);
+});
+
+app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname + '/index.html'));
 });
 
