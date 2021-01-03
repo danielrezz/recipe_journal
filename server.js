@@ -15,22 +15,28 @@ const PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-
-
 // Routes
 // =============================================================
 
 // Basic route that sends the user first to the AJAX Page
 
-app.get("/", function(req, res) {
-  res.send("This is a test to check the server!!!!!!");
+// app.get("/", function(req, res) {
+//   res.send("This is a test to check the server!!!!!!");
+// });
+
+// app.get('/notes', function(req, res) {
+//   res.json(dbJSON);
+// });
+
+app.get('/notes', function(req, res) {
+  res.sendFile(path.join(__dirname + '/notes.html'));
 });
 
-app.get("/note", function(req, res) {
-  res.json(dbJSON);
+app.use(function(req, res) {
+  res.sendFile(path.join(__dirname + '/index.html'));
 });
 
-app.post("/note", function(req, res) {
+app.post('/notes', function(req, res) {
   // Validate request body
   if(!req.body.title) {
     return res.json({error: "Missing required title"});
