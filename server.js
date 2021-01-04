@@ -14,6 +14,7 @@ const PORT = process.env.PORT || 3000;
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static('public'));
 
 // Routes
 // =============================================================
@@ -25,15 +26,15 @@ app.use(express.json());
 // });
 
 app.get('/notes', function(req, res) {
-  res.sendFile(path.join(__dirname + '/notes.html'));
+  res.sendFile(path.join(__dirname + '/Develop/public/notes.html'));
 });
 
-app.get('/notes', function(req, res) {
-  res.json(dbJSON);
-});
+// app.get('/notes', function(req, res) {
+//   res.json(dbJSON);
+// });
 
 app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname + '/index.html'));
+  res.sendFile(path.join(__dirname + '/Develop/public/index.html')); 
 });
 
 app.post('/notes', function(req, res) {
@@ -61,7 +62,8 @@ app.post('/notes', function(req, res) {
 });
 
 app.get('*', function(req, res) {
-  res.send("Sending you the homepage");
+  res.sendFile(path.join(__dirname + '/Develop/public/index.html'));
+  // res.send("Sending you the homepage");
 });
 
 // Starts the server to begin listening
