@@ -60,7 +60,7 @@ app.post('/notes', function(req, res) {
   });
 });
 
-app.get("*", function(req, res) {
+app.get('*', function(req, res) {
   res.send("Sending you the homepage");
 });
 
