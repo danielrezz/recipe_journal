@@ -3,13 +3,14 @@
 const express = require("express");
 const { v4: uuidv4 } = require('uuid');
 const fs = require("fs");
-const dbJSON = require("./db.json");
+let dbJSON = require("./db.json");
 const path = require("path");
+// const store = require('./store.js');
 
 // Sets up the Express App
 // =============================================================
 const app = express();
-const PORT = process.env.PORT || 3000;
+let PORT = process.env.PORT || 3000;
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -19,22 +20,39 @@ app.use(express.static('public'));
 // Routes
 // =============================================================
 
-// Basic route that sends the user first to the AJAX Page
-
-// app.get("/", function(req, res) {
-//   res.send("This is a test to check the server!!!!!!");
-// });
-
 app.get('/notes', function(req, res) {
-  res.sendFile(path.join(__dirname + '/Develop/public/notes.html'));
+  res.sendFile(path.join(__dirname + '/public/notes.html'));
 });
 
-// app.get('/notes', function(req, res) {
-//   res.json(dbJSON);
-// });
+app.delete("/api/notes/:id", function (req, res) {
+  fs.readFile("db.json", function (err, data) {
+    if (err) throw err;
+    let allNotes = JSON.parse(data);
+    let newNotes = allNotes.filter((note) => {
+      if(note.id !== req.params.id) {
+        return true;
+      }
+    });
+    fs.writeFile(path.join(__dirname, "db.json"), JSON.stringify(newNotes), (err) => {
+      if (err) {
+        return res.json({error: "Error writing to file"});
+      }
+  
+      return res.json(newNotes);
+    });
+  });
+});
 
 app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname + '/Develop/public/index.html')); 
+  res.sendFile(path.join(__dirname + '/public/index.html')); 
+});
+
+app.get("/api/notes", function (req, res) {
+  fs.readFile("db.json", function (err, data) {
+    if (err) throw err;
+    let allNotes = JSON.parse(data);
+    return res.json(allNotes);
+  });
 });
 
 app.post('/notes', function(req, res) {
@@ -52,7 +70,7 @@ app.post('/notes', function(req, res) {
   // Saves data to file by persisting in memory variable dbJSON to db.json file.
   // This is needed because when we turn off server we loose all memory data like pbJSON variable.
   // Saving to file allows us to read previous notes (before server was shutdown) from file.
-  fs.writeFile(path.join(__dirname, "db.json"), JSON.stringify(dbJSON), (err) => {
+  fs.writeFile(path.join(__dirname, "db.json"), JSON.stringify(dbJSON, null, 2), (err) => {
     if (err) {
       return res.json({error: "Error writing to file"});
     }
@@ -61,10 +79,19 @@ app.post('/notes', function(req, res) {
   });
 });
 
-app.get('*', function(req, res) {
-  res.sendFile(path.join(__dirname + '/Develop/public/index.html'));
+// app.get('/api/notes', function(req, res) {
+//   fs.readFile("./db.json", function(err, data) {
+//     if (err) throw err;
+//     let allNotes = JSON.parse(data);
+//     return res.json(allNotes);
+//   });
+//   console.log(allNotes);
+// });
+
+// app.get('*', function(req, res) {
+//   res.sendFile(path.join(__dirname + '/Develop/public/index.html'));
   // res.send("Sending you the homepage");
-});
+// });
 
 // Starts the server to begin listening
 // =============================================================
