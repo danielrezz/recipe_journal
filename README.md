@@ -8,13 +8,11 @@
 
 <p>
     A simple note-taking app that allows you to write up a note, pull it back up, and delete it.
-
-    You can find the [deployed app here](https://infinite-depths-19635.herokuapp.com/).
 </p>
 
-<img src="Screen Shot 2021-03-28 at 12.45.31 PM.png"> 
+You can find the [deployed app here](https://infinite-depths-19635.herokuapp.com/).
 
-[ Deployed app here ]
+<img src="Screen Shot 2021-03-28 at 12.45.31 PM.png"> 
 
 <p>
     The way I chose to approach this was simplicity. I wanted to keep things clean and minimal, yet smooth. Orange is my favorite color so I figured using a pastel version mixed with some opacity throughout the site would help accomplish that feeling.
