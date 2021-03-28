@@ -23,9 +23,12 @@ app.get('/notes', function(req, res) {
   res.sendFile(path.join(__dirname + '/public/notes.html'));
 });
 
-// app.get('/notes', function(req, res) {
-//   res.json(dbJSON);
-// });
+app.delete('/api/notes/:id', (req, res) => {
+  dbJSON
+    .deleteNote(req.params.id)
+    .then(() => res.json({ ok: true }))
+    .catch((err) => res.status(500).json(err));
+});
 
 app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname + '/public/index.html')); 
