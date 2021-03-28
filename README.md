@@ -8,6 +8,8 @@
 
 <p>
     A simple note-taking app that allows you to write up a note, pull it back up, and delete it.
+
+    You can find the [deployed app here](https://infinite-depths-19635.herokuapp.com/).
 </p>
 
 <img src="Screen Shot 2021-03-28 at 12.45.31 PM.png"> 
@@ -33,4 +35,3 @@
 <p>
     Challenges for this project included setting up my routes to post the existing notes on the front-end, as well as deleting notes. Once I dove into the material and did plenty of research, I figured out how to do both.
 </p>
-[ Deployed app here ]: https://infinite-depths-19635.herokuapp.com/
