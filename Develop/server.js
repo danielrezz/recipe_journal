@@ -3,8 +3,9 @@
 const express = require("express");
 const { v4: uuidv4 } = require('uuid');
 const fs = require("fs");
-const dbJSON = require("./db.json");
+let dbJSON = require("./db.json");
 const path = require("path");
+// const store = require('./store.js');
 
 // Sets up the Express App
 // =============================================================
@@ -23,11 +24,12 @@ app.get('/notes', function(req, res) {
   res.sendFile(path.join(__dirname + '/public/notes.html'));
 });
 
-app.delete('/api/notes/:id', (req, res) => {
-  dbJSON
-    .deleteNote(req.params.id)
-    .then(() => res.json({ ok: true }))
-    .catch((err) => res.status(500).json(err));
+app.delete("/api/notes/:id", function (req, res) {
+  fs.readFile("db.json", function (err, data) {
+    if (err) throw err;
+    let allNotes = JSON.parse(data);
+    
+  });
 });
 
 app.get('/', function(req, res) {

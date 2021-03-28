@@ -3,6 +3,7 @@ const $noteText = $(".note-textarea");
 const $saveNoteBtn = $(".save-note");
 const $newNoteBtn = $(".new-note");
 const $noteList = $(".list-container .list-group");
+const $delBtn = $("<i class='fas fa-trash-alt float-right text-danger delete-note'>");
 
 // activeNote is used to keep track of the note in the textarea
 let activeNote = {};
@@ -140,6 +141,7 @@ const getAndRenderNotes = () => {
   return getNotes().then(renderNoteList);
 };
 
+// $delBtn.on("click", handleNoteDelete);
 $saveNoteBtn.on("click", handleNoteSave);
 $noteList.on("click", ".list-group-item", handleNoteView);
 $newNoteBtn.on("click", handleNewNoteView);
