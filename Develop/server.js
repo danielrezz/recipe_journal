@@ -28,7 +28,18 @@ app.delete("/api/notes/:id", function (req, res) {
   fs.readFile("db.json", function (err, data) {
     if (err) throw err;
     let allNotes = JSON.parse(data);
-    
+    let newNotes = allNotes.filter((note) => {
+      if(note.id !== req.params.id) {
+        return true;
+      }
+    });
+    fs.writeFile(path.join(__dirname, "db.json"), JSON.stringify(newNotes), (err) => {
+      if (err) {
+        return res.json({error: "Error writing to file"});
+      }
+  
+      return res.json(newNotes);
+    });
   });
 });
 

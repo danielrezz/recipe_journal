@@ -108,5 +108,15 @@
     "title": "yo",
     "text": "yo note",
     "id": "1e0a1654-5e7d-4209-b57e-8f66b6c87260"
+  },
+  {
+    "title": "Things to do",
+    "text": "Clean kitchen\nPaint walls\nWalk dogs",
+    "id": "079e7879-4d2f-45df-a267-3f1b94c3aec0"
+  },
+  {
+    "title": "new note",
+    "text": "new text",
+    "id": "7ee509e9-eeff-4fa3-9d30-12a139f83e77"
   }
 ]
