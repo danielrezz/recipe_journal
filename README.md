@@ -12,12 +12,10 @@
 
 <img src="Screen Shot 2021-03-28 at 12.45.31 PM.png"> 
 
-[deployed app here]
+[Click here for the deployed app!]
 
 <p>
     The way I chose to approach this was simplicity. I wanted to keep things clean and minimal, yet smooth. Orange is my favorite color so I figured using a pastel version mixed with some opacity throughout the site would help accomplish that feeling.
-
-    You can find the [deployed app here].
 </p>
 
 <h2>
@@ -35,5 +33,4 @@
 <p>
     Challenges for this project included setting up my routes to post the existing notes on the front-end, as well as deleting notes. Once I dove into the material and did plenty of research, I figured out how to do both.
 </p>
-
-[deployed app here]: https://infinite-depths-19635.herokuapp.com/
+[Click here for the deployed app!]: https://infinite-depths-19635.herokuapp.com/
