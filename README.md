@@ -12,6 +12,8 @@
 
 <img src="Screen Shot 2021-03-28 at 12.45.31 PM.png"> 
 
+[deployed app here]
+
 <p>
     The way I chose to approach this was simplicity. I wanted to keep things clean and minimal, yet smooth. Orange is my favorite color so I figured using a pastel version mixed with some opacity throughout the site would help accomplish that feeling.
 
