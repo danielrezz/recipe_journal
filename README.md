@@ -16,6 +16,8 @@
 
 <p>
     The way I chose to approach this was simplicity. I wanted to keep things clean and minimal, yet smooth. Orange is my favorite color so I figured using a pastel version mixed with some opacity throughout the site would help accomplish that feeling.
+    
+    [Click here for the deployed app]
 </p>
 
 <h2>
