@@ -15,7 +15,7 @@
 <p>
     The way I chose to approach this was simplicity. I wanted to keep things clean and minimal, yet smooth. Orange is my favorite color so I figured using a pastel version mixed with some opacity throughout the site would help accomplish that feeling.
 
-    You can find the <a href="https://infinite-depths-19635.herokuapp.com/">deployed app here</a>.
+    You can find the [deployed app here](https://www.google.com "Note Taker App").
 </p>
 
 <h2>
