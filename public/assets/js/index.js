@@ -6,10 +6,8 @@ const $newRecipeBtn = $(".new-recipe");
 const $recipeList = $(".list-container .list-group");
 const $delBtn = $("<i class='fas fa-trash-alt float-right text-danger delete-recipe'>");
 
-// activeRecipe is used to keep track of the recipe in the textarea
 let activeRecipe = {};
 
-// A function for getting all recipes from the db
 const getRecipes = () => {
   return $.ajax({
     url: '/api/recipes',
@@ -17,7 +15,6 @@ const getRecipes = () => {
   });
 };
 
-// A function for saving a recipe to the db
 const saveRecipe = (recipe) => {
   return $.ajax({
     url: '/recipes',
@@ -26,7 +23,6 @@ const saveRecipe = (recipe) => {
   });
 };
 
-// A function for deleting a recipe from the db
 const deleteRecipe = (id) => {
   return $.ajax({
     url: '/api/recipes/' + id,
@@ -55,7 +51,6 @@ const renderActiveRecipe = () => {
   };
 };
 
-// Get the recipe data from the inputs, save it to the db and update the view
 const handleRecipeSave = function () {
   const newRecipe = {
     title: $recipeTitle.val(),
@@ -69,9 +64,7 @@ const handleRecipeSave = function () {
   });
 };
 
-// Delete the clicked recipe
 const handleRecipeDelete = function (event) {
-  // prevents the click listener for the list from being called when the button inside of it is clicked
   event.stopPropagation();
 
   const recipe = $(this).parent(".list-group-item").data();
@@ -86,20 +79,16 @@ const handleRecipeDelete = function (event) {
   });
 };
 
-// Sets the activeRecipe and displays it
 const handleRecipeView = function () {
   activeRecipe = $(this).data();
   renderActiveRecipe();
 };
 
-// Sets the activeRecipe to and empty object and allows the user to enter a new recipe
 const handleNewRecipeView = function () {
   activeRecipe = {};
   renderActiveRecipe();
 };
 
-// If a recipe's title or text are empty, hide the save button
-// Or else show it
 const handleRenderSaveBtn = function () {
   if (!$recipeTitle.val().trim() || !$recipeText1.val().trim() || !$recipeText2.val().trim()) {
     $saveRecipeBtn.hide();
@@ -108,14 +97,11 @@ const handleRenderSaveBtn = function () {
   };
 };
 
-// Render's the list of recipe titles
 const renderRecipeList = (recipes) => {
   $recipeList.empty();
 
   const recipeListItems = [];
 
-  // Returns jquery object for li with given text and delete button
-  // unless withDeleteButton argument is provided as false
   const create$li = (text, withDeleteButton = true) => {
     const $li = $("<li class='list-group-item'>");
     const $span = $("<span>").text(text);
@@ -142,12 +128,10 @@ const renderRecipeList = (recipes) => {
   $recipeList.append(recipeListItems);
 };
 
-// Gets recipes from the db and renders them to the sidebar
 const getAndRenderRecipes = () => {
   return getRecipes().then(renderRecipeList);
 };
 
-// $delBtn.on("click", handleRecipeDelete);
 $saveRecipeBtn.on("click", handleRecipeSave);
 $recipeList.on("click", ".list-group-item", handleRecipeView);
 $newRecipeBtn.on("click", handleNewRecipeView);
@@ -156,5 +140,4 @@ $recipeTitle.on("keyup", handleRenderSaveBtn);
 $recipeText1.on("keyup", handleRenderSaveBtn);
 $recipeText2.on("keyup", handleRenderSaveBtn);
 
-// Gets and renders the initial list of recipes
 getAndRenderRecipes();

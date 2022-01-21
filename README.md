@@ -35,10 +35,14 @@ You can find the [deployed app here](https://infinite-depths-19635.herokuapp.com
 * Express
 * UUID
 
+<p>
+    The FS module in Node.js was also used heavily to generate the JSON file that serves as our API.
+</p>
+
 <h2>
     Challenges
 </h2>
 
 <p>
-    Challenges for this project included setting up my routes to post the existing recipes on the front-end, as well as deleting recipes. Once I dove into the material and did plenty of research, I figured out how to do both.
+    The biggest challenges for this project were setting up the Post and Delete routes properly. It took some time to figure out how to correctly nest the ReadFile/WriteFile methods using the FS module from Node. After tinkering around to get that working, another challenge was getting the Ingredients and Steps sections to sit just right.
 </p>
