@@ -1,5 +1,5 @@
 <h1>
-    Note Taker App
+    Recipe Journal App
 </h1>
 
 <h2>
@@ -7,7 +7,7 @@
 </h2>
 
 <p>
-    A simple note-taking app that allows you to write up a note, pull it back up, and delete it.
+    An easy-to-use app where you can keep track of and store your favorite recipes.
 </p>
 
 You can find the [deployed app here](https://infinite-depths-19635.herokuapp.com/).
@@ -23,7 +23,7 @@ You can find the [deployed app here](https://infinite-depths-19635.herokuapp.com
 </h2>
 
 <p>
-    When arriving at the homepage, you can click the "Get Started" button to begin adding notes! The set up once you're at the main note page is pretty straightforward.
+    When arriving at the homepage, you can click the "Get Started" button to begin adding recipes! The set up once you're at the main note page is pretty straightforward.
 </p>
 
 <h2>
@@ -31,5 +31,5 @@ You can find the [deployed app here](https://infinite-depths-19635.herokuapp.com
 </h2>
 
 <p>
-    Challenges for this project included setting up my routes to post the existing notes on the front-end, as well as deleting notes. Once I dove into the material and did plenty of research, I figured out how to do both.
+    Challenges for this project included setting up my routes to post the existing recipes on the front-end, as well as deleting recipes. Once I dove into the material and did plenty of research, I figured out how to do both.
 </p>
