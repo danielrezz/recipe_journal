@@ -10,7 +10,7 @@
     An easy-to-use app where you can keep track of and store your favorite recipes.
 </p>
 
-You can find the [deployed app here](https://infinite-depths-19635.herokuapp.com/).
+You can find the [deployed app here](https://recipe-journal2022.herokuapp.com/).
 
 <img src="Screen Shot 2022-01-21 at 12.50.59 AM.png">
 
