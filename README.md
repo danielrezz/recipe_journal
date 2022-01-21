@@ -30,12 +30,10 @@ You can find the [deployed app here](https://infinite-depths-19635.herokuapp.com
     Built With
 </h3>
 
-<ul>
-    Javascript
-    Node.js
-    Express
-    UUID
-</ul>
+* Javascript
+* Node.js
+* Express
+* UUID
 
 <h2>
     Challenges
