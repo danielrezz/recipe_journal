@@ -15,16 +15,27 @@ You can find the [deployed app here](https://infinite-depths-19635.herokuapp.com
 <img src="Screen Shot 2022-01-21 at 12.50.59 AM.png">
 
 <p>
-    The way I chose to approach this was simplicity. I wanted to keep things clean and minimal, yet smooth. Orange is my favorite color so I figured using a pastel version mixed with some opacity throughout the site would help accomplish that feeling.
+    All you need to enter is your recipe's name, the ingredients, and cooking instructions. Save the recipe and come back to it any time!
 </p>
 
 <h2>
-    Content
+    About the Project
 </h2>
 
 <p>
-    When arriving at the homepage, you can click the "Get Started" button to begin adding recipes! The set up once you're at the main note page is pretty straightforward.
+    This is a full-stack web application where the user can save data (recipes) from the client side to the server. The saved recipes populate in a list on the left-hand side where the user can either select to view the recipe or delete it.
 </p>
+
+<h3>
+    Built With
+</h3>
+
+<ul>
+    Javascript
+    Node.js
+    Express
+    UUID
+</ul>
 
 <h2>
     Challenges
